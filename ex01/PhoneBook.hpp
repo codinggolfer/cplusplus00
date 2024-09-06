@@ -15,8 +15,8 @@ public:
 	PhoneBook();
 	void SearchBook();
 	void Exit();
-	void Bookie(Contact contacts);
-	void AddToPhoneBook(Contact contacts);
+	void Bookie(Contact& contacts);
+	void AddToPhoneBook(Contact& contacts);
 	~PhoneBook();
 };
 

@@ -1,8 +1,8 @@
-NAME	=	Megaphone
+NAME	=	PhoneBook
 
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-FILES	=	megaphone.cpp
+FILES	=	Contact.cpp PhoneBook.cpp
 
 CC		=	c++
 

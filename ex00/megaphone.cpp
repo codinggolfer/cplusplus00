@@ -6,11 +6,12 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:07:50 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/06/12 15:07:01 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/06 11:50:36 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <algorithm>
 
 int main(int ac, char **av)
 {
@@ -18,7 +19,7 @@ int main(int ac, char **av)
 	
 	if (ac > 1)
 	{
-		for (int i = 1; av[i] != '\0'; i++)
+		for (int i = 1; av[i] != NULL; i++)
 		{
 			str = av[i];
 			std::transform(str.begin(), str.end(), str.begin(), ::toupper);

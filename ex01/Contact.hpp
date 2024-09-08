@@ -14,6 +14,7 @@
 # define CONTACTS_HPP
 
 # include <iostream>
+#include <iomanip>
 //# include "PhoneBook.hpp"
 
 
@@ -41,13 +42,6 @@ public:
 	void setP(std::string str);
 	void setD(std::string str);
 	//printcontacts
-	void print() const {
-        std::cout << "Firstname: " << FirstName << ", "
-                  << "Lastname: " << LastName << ", "
-                  << "Nickname: " << Nickname << ", "
-                  << "Phone Number: " << PhoneNumber << ", "
-                  << "Darkest Secret: " << DarkestSecret << std::endl;
-	}
+	void print();
 };
-
 #endif

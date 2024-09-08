@@ -30,7 +30,7 @@ std::string Contact::getP()
 }
 std::string Contact::getD()
 {
-	return DarkestSecter;
+	return DarkestSecret;
 }
 
 void Contact::setF(std::string str)
@@ -51,5 +51,10 @@ void Contact::setP(std::string str)
 }
 void Contact::setD(std::string str)
 {
-	DarkestSecter = str;
+	DarkestSecret = str;
+}
+
+void Contact::print() {
+        std::cout << Contact::getF() << " | " << Contact::getL() << " | " << Contact::getN() << " | "
+		<< Contact::getP() << " | " << Contact::getD() << " |" << std::endl;
 }

@@ -11,23 +11,26 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <algorithm>
+#include <cctype>
+#include <string>
 
 int main(int ac, char **av)
 {
 	std::string	str;
-	
+	size_t lenght = 0;
 	if (ac > 1)
 	{
 		for (int i = 1; av[i] != NULL; i++)
 		{
 			str = av[i];
-			std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+			lenght = str.length();
+			for(size_t j = 0; j < lenght; j++)
+				str[j] = std::toupper(str[j]);
 			std::cout << str;
 		}
 	}
 	else
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	std::cout << '\n';
+	std::cout << std::endl;
 	return (0);
 }

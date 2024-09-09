@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME):	$(FtoO)
 	$(CC) $(CFLAGS) $(FtoO) -o $(NAME)
 
-%.o: %.c
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

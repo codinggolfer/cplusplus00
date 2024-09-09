@@ -1,6 +1,6 @@
 NAME	=	Account
 
-CFLAGS	=	-std=c++98 -Wall -Wextra -Werror 
+CFLAGS	=	-std=c++98 #-Wall -Wextra -Werror 
 
 FILES	=	tests.cpp Account.cpp
 

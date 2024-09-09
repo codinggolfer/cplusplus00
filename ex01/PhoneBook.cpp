@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 11:46:40 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/06 19:33:39 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/09 11:35:33 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void PhoneBook::SearchBook()
 		try{
 			num = std::stoi(line);
 		} catch(const std::invalid_argument& e) {
-		 	std::cerr << "Only numbers please" << e.what() << std::endl;
+		 	std::cerr << "Only numbers please " << std::endl;
 		} catch(const std::out_of_range& e) {
-			std::cerr << "Out of range" << e.what() << std::endl;
+			std::cerr << "Out of range " << std::endl;
 		}
 		if (num > 0 && num < 9)
 			_contacts[num - 1].print();
@@ -59,7 +59,7 @@ void PhoneBook::AddToPhoneBook(Contact& contacts)
 
 	_contacts[i] = contacts;
 	i++;
-	if (i == 7)
+	if (i == 8)
 		i = 0;
 }
 

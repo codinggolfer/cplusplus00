@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 11:46:40 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/09 11:35:33 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/16 10:36:22 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,19 @@ void PhoneBook::SearchBook()
 	int num;
 
 	std::cout << std::setw(10) << std::left << "index " << "| " << std::setw(10) << std::left << "first name" << "| " << std::setw(10) << std::left << "last name" << "| " << std::setw(10) << std::left << "nickname" << std::endl;
-	for (int i = 0; i < 8; i++)
-		std::cout << std::setw(10) << std::right << i + 1 << "| "
-		<< std::setw(10) << std::left << PhoneBook::FormatContactName(_contacts[i].getF()) << "| "
-		<< std::setw(10) << std::left << PhoneBook::FormatContactName(_contacts[i].getL()) << "| "
-		<< std::setw(10) << std::left << PhoneBook::FormatContactName(_contacts[i].getN()) << "|" << std::endl;
+	for (int i = 0; i < MAX_CONTACT; i++)
+		std::cout 	<< std::setw(10) << std::right << i + 1 << "| "
+					<< std::setw(10) << std::left << PhoneBook::FormatContactName(_contacts[i].getF()) << "| "
+					<< std::setw(10) << std::left << PhoneBook::FormatContactName(_contacts[i].getL()) << "| "
+					<< std::setw(10) << std::left << PhoneBook::FormatContactName(_contacts[i].getN()) << "|" << std::endl;
 	while (1)
 	{
 		std::cout << "Enter a number 1-8 to open contact or return with BACK: ";
 		getline(std::cin, line);
+		if (std::cin.eof()){
+			std::cout << std::endl << "ctrl + d is forbidden" << std::endl;
+			exit(0) ;
+		}
 		if (line.empty())
 				continue ;
 		if (line == "BACK")
@@ -59,7 +63,7 @@ void PhoneBook::AddToPhoneBook(Contact& contacts)
 
 	_contacts[i] = contacts;
 	i++;
-	if (i == 8)
+	if (i == MAX_CONTACT)
 		i = 0;
 }
 
@@ -87,6 +91,10 @@ void PhoneBook::Bookie(Contact& contacts)
                 break;
         }
 			getline(std::cin, line);
+			if (std::cin.eof()){
+				std::cout << std::endl << "ctrl + d is forbidden" << std::endl;
+				exit(0) ;
+			}
 			if (line.empty()){
 				std::cout << "fill in the asked detail" << std::endl;
 				continue ;
@@ -111,33 +119,6 @@ void PhoneBook::Bookie(Contact& contacts)
 			i++;
 		} while (i < 5);
 }
+PhoneBook::PhoneBook() {}
 
-int main(void)
-{
-	PhoneBook info;
-	Contact contacts;
-	std::string line;
-	
-	while (1)
-	{
-		std::cout << "PhoneBook navigate with ADD, SEARCH or EXIT: ";
-		getline(std::cin, line);
-		if (line == "ADD")
-		{
-			info.Bookie(contacts);
-			info.AddToPhoneBook(contacts);
-		}
-		else if (line == "SEARCH")
-		{
-			info.SearchBook();
-		}
-		else if (line == "EXIT")
-		{
-			std::cout << "welcome back to the future" << std::endl;
-			return (0);
-		}
-		else
-			std::cout << "provide me with something legit BOIII" << std::endl;
-	}
-	return 0;
-}
+PhoneBook::~PhoneBook() {}

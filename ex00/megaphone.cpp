@@ -6,13 +6,11 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:07:50 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/06 11:50:36 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/16 09:59:35 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cctype>
-#include <string>
 
 int main(int ac, char **av)
 {

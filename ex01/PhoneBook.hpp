@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <iomanip>
+# include <string>
 # include "Contact.hpp"
 
 # define MAX_CONTACT 8
@@ -22,15 +23,5 @@ public:
 	std::string FormatContactName(std::string name);
 	~PhoneBook();
 };
-
-PhoneBook::PhoneBook(/* args */)
-{
-}
-
-PhoneBook::~PhoneBook()
-{
-}
-
-
 
 #endif

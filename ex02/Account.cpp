@@ -6,11 +6,12 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 11:57:34 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/09 16:43:01 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/16 11:04:20 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <ctime>
 #include "Account.hpp"
 
 int Account::_nbAccounts = 0;
@@ -18,7 +19,7 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-Account::Account(int initial_deposit)
+Account::Account(int initial_deposit) : _nbDeposits(0), _nbWithdrawals(0)
 {
 	_accountIndex = _nbAccounts;
 	++_nbAccounts;
@@ -109,6 +110,7 @@ void Account::_displayTimestamp()
 	char buffer[20];
 	std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S]", local_time);
     std::cout << buffer;
+	//std::cout << "[19920104_091532]";
 
 }
 

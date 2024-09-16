@@ -1,10 +1,10 @@
 NAME	=	Account
 
-CFLAGS	=	-std=c++98 -Wall -Wextra -Werror 
+CFLAGS	=	-std=c++98 -Wall -Wextra -Werror -g
 
 FILES	=	tests.cpp Account.cpp
 
-CC		=	g++
+CC		=	c++
 
 FtoO	=	$(FILES:.cpp=.o)
 
